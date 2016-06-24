@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.jxjycn.learntodrive.mine.PersonalInfromationActivity">
+
+    <RelativeLayout
+        android:id="@+id/pia_rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/pia_title"
+        android:background="@drawable/mine_item_background_base_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:text="@string/head"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/mianTextColor" />
+
+        <ImageView
+            android:id="@+id/pia_iv_next"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_marginRight="@dimen/dp10"
+            android:clickable="false"
+            android:src="@mipmap/app_enter_btn" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:layout_marginRight="@dimen/dp23"
+            android:background="@color/c_line"></View>
+
+
+        <com.jxjycn.learntodrive.view.CircularImageView
+            android:id="@+id/pia_iv_head"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/pia_iv_next"
+            android:layout_toStartOf="@+id/pia_iv_next"
+            android:clickable="false"
+            
+            android:scaleType="centerCrop"
+            android:src="@mipmap/person_default_logo2"
+            android:text="Y0.00"
+            android:textColor="@color/mianTextColor" />
+
+    </RelativeLayout>
+
+
+    <include
+        android:id="@+id/pia_title"
+        layout="@layout/app_title"></include>
+
+
+    <RelativeLayout
+        android:id="@+id/pia_rl_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/pia_rl_head"
+        android:background="@drawable/mine_item_background_base_white">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:text="@string/nickname"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/mianTextColor" />
+
+        <TextView
+            android:id="@+id/pia_tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:layout_toLeftOf="@+id/pia_iv_next1"
+            android:layout_toStartOf="@+id/pia_iv_next1"
+            android:textColor="@color/mianTextColor" />
+
+        <ImageView
+            android:id="@+id/pia_iv_next1"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_marginRight="@dimen/dp10"
+            android:clickable="false"
+            android:src="@mipmap/app_enter_btn" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:layout_marginRight="@dimen/dp23"
+            android:background="@color/c_line"></View>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pia_rl_reallyname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/pia_rl_nickname"
+        android:background="@drawable/mine_item_background_base_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:text="@string/reallyname"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/mianTextColor" />
+
+        <TextView
+            android:id="@+id/pia_tv_reallyname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:layout_toLeftOf="@+id/pia_iv_next2"
+            android:layout_toStartOf="@+id/pia_iv_next2"
+            android:textColor="@color/mianTextColor" />
+
+        <ImageView
+            android:id="@+id/pia_iv_next2"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_marginRight="@dimen/dp10"
+            android:clickable="false"
+            android:src="@mipmap/app_enter_btn" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:layout_marginRight="@dimen/dp23"
+            android:background="@color/c_line"></View>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pia_rl_sex"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/pia_rl_reallyname"
+        android:background="@drawable/mine_item_background_base_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:text="@string/sex"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/mianTextColor" />
+
+        <TextView
+            android:id="@+id/pia_tv_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:layout_toLeftOf="@+id/pia_iv_next3"
+            android:layout_toStartOf="@+id/pia_iv_next3"
+            android:textColor="@color/mianTextColor" />
+
+        <ImageView
+            android:id="@+id/pia_iv_next3"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_marginRight="@dimen/dp10"
+            android:clickable="false"
+            android:src="@mipmap/app_enter_btn" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:layout_marginRight="@dimen/dp23"
+            android:background="@color/c_line"></View>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pia_rl_boirthday"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/pia_rl_sex"
+        android:background="@drawable/mine_item_background_base_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:text="@string/boirthday"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/mianTextColor" />
+
+        <TextView
+            android:id="@+id/pia_tv_boirthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:layout_toLeftOf="@+id/pia_iv_next4"
+            android:layout_toStartOf="@+id/pia_iv_next4"
+            android:textColor="@color/mianTextColor" />
+
+        <ImageView
+            android:id="@+id/pia_iv_next4"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_marginRight="@dimen/dp10"
+            android:clickable="false"
+            android:src="@mipmap/app_enter_btn" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:layout_marginRight="@dimen/dp23"
+            android:background="@color/c_line"></View>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pia_rl_idINformation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/pia_rl_boirthday"
+        android:background="@drawable/mine_item_background_base_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:text="@string/idINformation"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/mianTextColor" />
+
+        <TextView
+            android:id="@+id/pia_tv_idINformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:layout_toLeftOf="@+id/pia_iv_next5"
+            android:layout_toStartOf="@+id/pia_iv_next5"
+            android:textColor="@color/mianTextColor" />
+
+        <ImageView
+            android:id="@+id/pia_iv_next5"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_marginRight="@dimen/dp10"
+            android:clickable="false"
+            android:src="@mipmap/app_enter_btn" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:layout_marginRight="@dimen/dp23"
+            android:background="@color/c_line"></View>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pia_rl_introduce"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/pia_rl_idINformation"
+        android:background="@drawable/mine_item_background_base_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:text="@string/introduce"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/mianTextColor" />
+
+        <TextView
+            android:id="@+id/pia_tv_introduce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:layout_toLeftOf="@+id/pia_iv_next6"
+            android:layout_toStartOf="@+id/pia_iv_next6"
+            android:textColor="@color/mianTextColor" />
+
+        <ImageView
+            android:id="@+id/pia_iv_next6"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_marginRight="@dimen/dp10"
+            android:clickable="false"
+            android:src="@mipmap/app_enter_btn" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:layout_marginRight="@dimen/dp23"
+            android:background="@color/c_line"></View>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/pia_btn_commit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pia_rl_introduce"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dp33"
+        android:layout_marginRight="@dimen/dp33"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/nomal_button_selector"
+        android:text="确定" />
+
+
+</RelativeLayout>

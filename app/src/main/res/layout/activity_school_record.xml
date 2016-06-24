@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  android:background="@color/mainBackground"
+    tools:context="com.jxjycn.learntodrive.SchoolRecord.SchoolRecordActivity">
+
+
+    <include
+        layout="@layout/app_title"
+        android:id="@+id/title"
+        ></include>
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/dp3"
+        android:paddingTop="@dimen/dp3">
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+         android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginRight="@dimen/dp30"
+
+
+            >
+
+            <RadioButton
+                android:id="@+id/school_record_btn_learn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_right_selected"
+                android:button="@null"
+                android:gravity="center"
+                android:checked="true"
+                android:text="学车记录"
+                android:layout_marginLeft="@dimen/dp3"
+                android:layout_marginRight="@dimen/dp3"
+                android:textColor="@drawable/text_color_selected"
+
+                />
+
+            <RadioButton
+                android:id="@+id/school_record_btn_train"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_right_selected"
+                android:button="@null"
+                android:gravity="center"
+                android:text="练车记录"
+                android:layout_marginLeft="@dimen/dp3"
+                android:layout_marginRight="@dimen/dp3"
+                android:textColor="@drawable/text_color_selected"
+                android:textSize="17.0sp" />
+
+
+        </RadioGroup>
+    </RelativeLayout>
+
+    <com.jxjycn.learntodrive.view.ScrollViewPager
+        android:id="@+id/school_record_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

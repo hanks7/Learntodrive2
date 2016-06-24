@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/titalBar"
+    android:background="@color/c0781e6">
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/px32" />
+
+
+    <FrameLayout
+        android:id="@+id/fl_activity_title_left"
+        android:layout_width="@dimen/dp80"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:clickable="true"
+        android:onClick="onback">
+
+        <ImageView
+            android:id="@+id/iv_activity_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp15"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_activity_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp15" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/fl_activity_title_right"
+        android:layout_width="@dimen/dp80"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/iv_activity_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp15" />
+
+        <TextView
+            android:id="@+id/tv_activity_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp15"
+            android:textColor="@color/white"
+            android:textSize="@dimen/px24" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

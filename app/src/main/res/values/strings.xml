@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">交学教育</string>
+    <string name="enter">报名</string>
+    <string name="homework">做题</string>
+    <string name="learntodrive">学车</string>
+    <string name="partnertraining">陪练</string>
+    <string name="manualblock">C1 (手动挡)</string>
+    <string name="autoblock">C2 (自动挡)</string>
+    <string name="orderCoach">教练列表</string>
+    <string name="refresh">筛选</string>
+    <string name="PleaseEnterTheNameOfTheCoach">请输入教练的名字</string>
+    <string name="coachword">教练说</string>
+    <string name="coachinfo">教练简介</string>
+    <string name="PersonalInfromationActivityTitle">个人信息</string>
+
+    <string name="head">头    像</string>
+    <string name="nickname">昵    称</string>
+    <string name="reallyname">真实姓名</string>
+    <string name="sex">性    别</string>
+    <string name="boirthday">出生年月</string>
+    <string name="idINformation">报名身份信息</string>
+    <string name="introduce">一句话介绍</string>
+    <string name="camera">相机</string>
+    <string name="album">相册</string>
+    <string name="SchoolRecordActivity">学车记录</string>
+
+
+</resources>

@@ -1,0 +1,163 @@
+[
+    {
+        "outputFile": "D:\\workDocument\\jxjycn\\Learntodrive\\slidingMenuLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 903,
+                    "endColumn": 57,
+                    "endOffset": 956
+                },
+                "from": {
+                    "file": "D:\\workDocument\\jxjycn\\Learntodrive\\slidingMenuLibrary\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 903,
+                        "endColumn": 57,
+                        "endOffset": 956
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 961,
+                    "endColumn": 55,
+                    "endOffset": 1012
+                },
+                "from": {
+                    "file": "D:\\workDocument\\jxjycn\\Learntodrive\\slidingMenuLibrary\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 961,
+                        "endColumn": 55,
+                        "endOffset": 1012
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 1017,
+                    "endColumn": 42,
+                    "endOffset": 1055
+                },
+                "from": {
+                    "file": "D:\\workDocument\\jxjycn\\Learntodrive\\slidingMenuLibrary\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 1017,
+                        "endColumn": 42,
+                        "endOffset": 1055
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 1060,
+                    "endColumn": 52,
+                    "endOffset": 1108
+                },
+                "from": {
+                    "file": "D:\\workDocument\\jxjycn\\Learntodrive\\slidingMenuLibrary\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 1060,
+                        "endColumn": 52,
+                        "endOffset": 1108
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 1113,
+                    "endColumn": 55,
+                    "endOffset": 1164
+                },
+                "from": {
+                    "file": "D:\\workDocument\\jxjycn\\Learntodrive\\slidingMenuLibrary\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 1113,
+                        "endColumn": 55,
+                        "endOffset": 1164
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 1169,
+                    "endColumn": 52,
+                    "endOffset": 1217
+                },
+                "from": {
+                    "file": "D:\\workDocument\\jxjycn\\Learntodrive\\slidingMenuLibrary\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 1169,
+                        "endColumn": 52,
+                        "endOffset": 1217
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1222,
+                    "endLine": 15,
+                    "endColumn": 12,
+                    "endOffset": 1508
+                },
+                "from": {
+                    "file": "D:\\workDocument\\jxjycn\\Learntodrive\\slidingMenuLibrary\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1222,
+                        "endLine": 15,
+                        "endColumn": 12,
+                        "endOffset": 1508
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1513,
+                    "endLine": 18,
+                    "endColumn": 12,
+                    "endOffset": 1668
+                },
+                "from": {
+                    "file": "D:\\workDocument\\jxjycn\\Learntodrive\\slidingMenuLibrary\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1513,
+                        "endLine": 18,
+                        "endColumn": 12,
+                        "endOffset": 1668
+                    }
+                }
+            }
+        ]
+    }
+]

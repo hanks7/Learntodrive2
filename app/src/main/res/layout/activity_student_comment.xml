@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:background="@color/mainBackground"
+    tools:context="com.jxjycn.learntodrive.Coach.StudentCommentActivity">
+
+    <include
+        android:id="@+id/student_comment_title"
+        layout="@layout/app_title"></include>
+
+    <LinearLayout
+
+        android:id="@+id/student_comment_ll_hide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/student_comment_imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/no_message_warn_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="暂无数据" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/student_comment_lsv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/student_comment_title"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

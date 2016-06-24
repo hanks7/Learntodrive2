@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/item_lsv_student_comment_rl_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mine_item_background">
+
+
+        <ImageView
+            android:id="@+id/item_lsv_student_comment_iv_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp10"
+            android:src="@mipmap/person_default_logo2" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+
+            android:layout_toRightOf="@+id/item_lsv_student_comment_iv_head"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+
+                android:layout_marginTop="@dimen/dp7">
+
+                <TextView
+                    android:id="@+id/item_lsv_student_comment_tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="匿名者"
+                    android:textColor="@color/mianTextColor" />
+
+                <TextView
+                    android:id="@+id/item_lsv_student_comment_tv_ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center_vertical"
+                    android:text="5.0分"
+                    android:textColor="@color/yellow" />
+
+                <RatingBar
+                    android:id="@+id/item_lsv_student_comment_iv_ratingBar"
+                    style="@style/MyDiyRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="13dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/item_lsv_student_comment_tv_ratingBar"
+                    android:rating="4" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp10"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/item_lsv_student_comment_tv_push_time"
+                    android:layout_marginRight="@dimen/dp7"
+                    android:text="2016-06-13 13:40"
+                    android:textColor="@color/mianTextColor" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/dp10"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_lsv_student_comment_studentNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="鉴于百度以非人工检索方式、根据您键入的关键字自动生成到第三方网页的链接，除百度注明之服务"
+
+                    android:textColor="@color/mianTextColor" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <View
+            style="@style/dividing_line"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"></View>
+
+
+    </RelativeLayout>
+</LinearLayout>

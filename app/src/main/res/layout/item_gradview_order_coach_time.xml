@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/item_gradview_order_coach_time_rl_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/item_gradview_order_coach_time_tv_time_choosed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="05.00-06.00"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:id="@+id/item_gradview_order_coach_time_ll_choosing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/item_gradview_order_coach_time_check_choosing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="05.00-06.00"
+
+                android:textColor="@color/black" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:src="@mipmap/ok_icon" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

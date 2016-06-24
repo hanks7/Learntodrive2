@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/order_coach_bar_information_in_title"
+        layout="@layout/app_title"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/dp7"
+        android:background="@drawable/editext_background_shape">
+
+
+        <ImageView
+            android:id="@+id/order_coach_imageView4"
+            android:layout_width="@dimen/dp21"
+            android:layout_height="@dimen/dp21"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp5"
+            android:src="@mipmap/wb_letter_search_normal" />
+
+        <EditText
+            android:id="@+id/order_coach_edt_input"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp48"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_toLeftOf="@+id/order_coach_iv_clear"
+            android:layout_toRightOf="@+id/order_coach_imageView4"
+            android:background="@null"
+            android:hint="@string/PleaseEnterTheNameOfTheCoach"
+            android:textColor="@color/mianTextColor"
+            android:textCursorDrawable="@drawable/curson" />
+
+        <ImageView
+            android:id="@+id/order_coach_iv_clear"
+            android:layout_width="@dimen/dp21"
+            android:layout_height="@dimen/dp21"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/order_coach_imageView4"
+            android:layout_marginRight="@dimen/dp5"
+            android:src="@mipmap/bookingdetail_public_close" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/order_coach_v_line"
+        style="@style/dividing_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp" />
+
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/order_coach_ptr_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <in.srain.cube.views.loadmore.LoadMoreListViewContainer
+            android:id="@+id/order_coach_load_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+
+                android:id="@+id/order_coach_lsv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:background="@color/white"></ListView>
+        </in.srain.cube.views.loadmore.LoadMoreListViewContainer>
+
+
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+
+</LinearLayout>

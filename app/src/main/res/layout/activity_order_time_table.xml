@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.jxjycn.learntodrive.Coach.OrderTimeTableActivity">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/app_title"></include>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_commit"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:background="@color/booktimebackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/item_ordercoach_rl_item"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white">
+
+
+                <ImageView
+                    android:id="@+id/item_ordercoach_iv_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:src="@mipmap/person_default_logo2" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_toEndOf="@+id/item_ordercoach_iv_head"
+                    android:layout_toRightOf="@+id/item_ordercoach_iv_head"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+
+                        android:layout_marginTop="@dimen/dp7"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/item_ordercoach_tv_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/app_name"
+                            android:textColor="@color/mianTextColor" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp15"
+                            android:layout_marginRight="@dimen/dp15"
+                            android:src="@mipmap/sexw" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/dp15"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:orientation="horizontal">
+
+                        <RatingBar
+                            android:id="@+id/item_ordercoach_ratingbar"
+                            style="@style/MyDiyRatingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="13dp"
+                            android:layout_gravity="center_vertical"
+
+                            android:rating="4" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp7"
+                            android:layout_marginRight="@dimen/dp7"
+                            android:text="0.0学分"
+                            android:textColor="@color/yellow" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_stu_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/mianTextColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="  个学员"
+                            android:textColor="@color/mianTextColor"></TextView>
+
+                        <TextView
+                            android:id="@+id/tv_train_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="  训练时长"
+                            android:textColor="@color/mianTextColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0分钟"
+                            android:textColor="@color/yellow" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/linearLayout3"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+
+                        android:id="@+id/item_ordercoach_iv_choose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="@dimen/dp7"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="教龄"
+                            android:textColor="@color/mianTextColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textColor="@color/yellow" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="年"
+                            android:textColor="@color/mianTextColor" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/item_ordercoach_tv_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp15"
+
+                        android:text="投诉率0%"
+
+                        android:textColor="@color/mianTextColor" />
+                </LinearLayout>
+
+                <View
+                    style="@style/dividing_line"
+                    android:layout_width="match_parent"
+                    android:layout_alignParentBottom="true"></View>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/tv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:text="@string/coachword"
+                    android:textColor="@color/mianTextColor" />
+
+                <TextView
+                    android:id="@+id/tv_coach_word"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_toEndOf="@+id/tv_2"
+                    android:layout_toRightOf="@+id/tv_2"
+                    android:textColor="@color/mianTextColor" />
+
+                <View
+                    style="@style/dividing_line"
+                    android:layout_width="match_parent"
+                    android:layout_alignParentBottom="true"></View>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/tv_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:text="@string/coachinfo"
+                    android:textColor="@color/mianTextColor" />
+
+                <TextView
+                    android:id="@+id/tv_coach_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_toEndOf="@+id/tv_3"
+                    android:layout_toRightOf="@+id/tv_3"
+                    android:textColor="@color/mianTextColor" />
+
+                <View
+                    style="@style/dividing_line"
+                    android:layout_width="match_parent"
+                    android:layout_alignParentBottom="true"></View>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/mine_item_background">
+
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        >
+
+                        <ImageView
+                            android:id="@+id/imageView41"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dp7"
+                            android:src="@mipmap/icon_clock3x" />
+
+                        <TextView
+                            android:id="@+id/tv_order_time"
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/imageView41"
+                            android:text="预约时间" />
+
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/dividing_line"
+                        android:layout_width="match_parent"
+                        android:layout_alignParentBottom="true"></View>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_coach_car"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/mine_item_background">
+
+                    <View
+                        android:layout_width="0.1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/c_line"></View>
+
+                    <RelativeLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/imageView42"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dp7"
+                            android:src="@mipmap/icon_car3x" />
+
+                        <TextView
+                            android:id="@+id/tv_coach_car"
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/imageView42"
+                            android:text="教练车辆" />
+
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/dividing_line"
+                        android:layout_width="match_parent"
+                        android:layout_alignParentBottom="true"></View>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_stu_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/mine_item_background">
+
+                    <View
+                        android:layout_width="0.1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/c_line"></View>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/imageView43"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dp7"
+                            android:src="@mipmap/icon_awesome3x" />
+
+                        <TextView
+                            android:id="@+id/tv_comment"
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/imageView43"
+                            android:text="学员评价" />
+
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/dividing_line"
+                        android:layout_width="match_parent"
+                        android:layout_alignParentBottom="true"></View>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/dp5"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius">
+
+                        <TextView
+                            android:id="@+id/tv_dayOf_week_0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="日1"
+                            android:textColor="@color/yellow" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius">
+
+                        <TextView
+                            android:id="@+id/tv_dayOf_week_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="日1"
+                            android:textColor="@color/yellow" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius">
+
+                        <TextView
+                            android:id="@+id/tv_dayOf_week_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="日1"
+                            android:textColor="@color/yellow" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius">
+
+                        <TextView
+                            android:id="@+id/tv_dayOf_week_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="日1"
+                            android:textColor="@color/yellow" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius">
+
+                        <TextView
+                            android:id="@+id/tv_dayOf_week_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="日1"
+                            android:textColor="@color/yellow" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius">
+
+                        <TextView
+                            android:id="@+id/tv_dayOf_week_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="日1"
+                            android:textColor="@color/yellow" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius">
+
+                        <TextView
+                            android:id="@+id/tv_dayOf_week_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="日1"
+                            android:textColor="@color/yellow" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <RadioGroup
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+
+
+                    >
+
+                    <RadioButton
+                        android:id="@+id/tv_dayOf_week_list_0"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius_selected"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="6/18"
+                        android:textColor="@drawable/selected_booktime_cocah_text_color"
+                        android:textSize="@dimen/px22" />
+
+                    <RadioButton
+                        android:id="@+id/tv_dayOf_week_list_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius_selected"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="6/18"
+                        android:textColor="@drawable/selected_booktime_cocah_text_color"
+                        android:textSize="@dimen/px22"
+
+                        />
+
+                    <RadioButton
+                        android:id="@+id/tv_dayOf_week_list_2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius_selected"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="6/18"
+                        android:textColor="@drawable/selected_booktime_cocah_text_color"
+                        android:textSize="@dimen/px22" />
+
+                    <RadioButton
+                        android:id="@+id/tv_dayOf_week_list_3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius_selected"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="6/18"
+                        android:textColor="@drawable/selected_booktime_cocah_text_color"
+                        android:textSize="@dimen/px22" />
+
+                    <RadioButton
+                        android:id="@+id/tv_dayOf_week_list_4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius_selected"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="6/18"
+                        android:textColor="@drawable/selected_booktime_cocah_text_color"
+                        android:textSize="@dimen/px22" />
+
+                    <RadioButton
+                        android:id="@+id/tv_dayOf_week_list_5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius_selected"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="6/18"
+                        android:textColor="@drawable/selected_booktime_cocah_text_color"
+                        android:textSize="@dimen/px22" />
+
+                    <RadioButton
+                        android:id="@+id/tv_dayOf_week_list_6"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_no_radius_selected"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="6/18"
+                        android:textColor="@drawable/selected_booktime_cocah_text_color"
+                        android:textSize="@dimen/px22" />
+
+
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <com.jxjycn.learntodrive.view.BaseGridView
+                android:id="@+id/gv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:horizontalSpacing="1dp"
+                android:numColumns="4"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="1dp" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_commit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+
+        <Button
+            android:id="@+id/btn_commite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp5"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_marginRight="@dimen/dp13"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@drawable/mine_item_background"
+            android:text="确定"
+
+            android:textColor="@color/mianTextColor" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,217 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+    <dimen name="slidingmenu_offset">80dp</dimen>
+
+    <dimen name="titalBar">45dip</dimen>
+
+
+    <dimen name="dp1">1dip</dimen>
+    <dimen name="dp2">2dip</dimen>
+    <dimen name="dp3">3dip</dimen>
+    <dimen name="dp4">4dip</dimen>
+    <dimen name="dp5">5dip</dimen>
+    <dimen name="dp6">6dip</dimen>
+    <dimen name="dp7">7dip</dimen>
+    <dimen name="dp8">8dip</dimen>
+    <dimen name="dp9">9dip</dimen>
+    <dimen name="dp10">10dip</dimen>
+    <dimen name="dp11">11dip</dimen>
+    <dimen name="dp12">12dip</dimen>
+    <dimen name="dp13">13dip</dimen>
+    <dimen name="dp14">14dip</dimen>
+    <dimen name="dp15">15dip</dimen>
+    <dimen name="dp16">16dip</dimen>
+    <dimen name="dp17">17dip</dimen>
+    <dimen name="dp18">18dip</dimen>
+    <dimen name="dp19">19dip</dimen>
+    <dimen name="dp20">20dip</dimen>
+    <dimen name="dp21">21dip</dimen>
+    <dimen name="dp22">22dip</dimen>
+    <dimen name="dp23">23dip</dimen>
+    <dimen name="dp24">24dip</dimen>
+    <dimen name="dp25">25dip</dimen>
+    <dimen name="dp26">26dip</dimen>
+    <dimen name="dp27">27dip</dimen>
+    <dimen name="dp28">28dip</dimen>
+    <dimen name="dp29">29dip</dimen>
+    <dimen name="dp30">30dip</dimen>
+    <dimen name="dp31">31dip</dimen>
+    <dimen name="dp32">32dip</dimen>
+    <dimen name="dp33">33dip</dimen>
+    <dimen name="dp34">34dip</dimen>
+    <dimen name="dp35">35dip</dimen>
+    <dimen name="dp36">36dip</dimen>
+    <dimen name="dp37">37dip</dimen>
+    <dimen name="dp38">38dip</dimen>
+    <dimen name="dp39">39dip</dimen>
+    <dimen name="dp40">40dip</dimen>
+    <dimen name="dp41">41dip</dimen>
+    <dimen name="dp42">42dip</dimen>
+    <dimen name="dp43">43dip</dimen>
+    <dimen name="dp44">44dip</dimen>
+    <dimen name="dp45">45dip</dimen>
+    <dimen name="dp46">46dip</dimen>
+    <dimen name="dp47">47dip</dimen>
+    <dimen name="dp48">48dip</dimen>
+    <dimen name="dp49">49dip</dimen>
+    <dimen name="dp50">50dip</dimen>
+    <dimen name="dp51">51dip</dimen>
+    <dimen name="dp52">52dip</dimen>
+    <dimen name="dp53">53dip</dimen>
+    <dimen name="dp54">54dip</dimen>
+    <dimen name="dp55">55dip</dimen>
+    <dimen name="dp56">56dip</dimen>
+    <dimen name="dp57">57dip</dimen>
+    <dimen name="dp58">58dip</dimen>
+    <dimen name="dp59">59dip</dimen>
+    <dimen name="dp60">60dip</dimen>
+    <dimen name="dp61">61dip</dimen>
+    <dimen name="dp62">62dip</dimen>
+    <dimen name="dp63">63dip</dimen>
+    <dimen name="dp64">64dip</dimen>
+    <dimen name="dp65">65dip</dimen>
+    <dimen name="dp66">66dip</dimen>
+    <dimen name="dp67">67dip</dimen>
+    <dimen name="dp68">68dip</dimen>
+    <dimen name="dp69">69dip</dimen>
+    <dimen name="dp70">70dip</dimen>
+    <dimen name="dp71">71dip</dimen>
+    <dimen name="dp72">72dip</dimen>
+    <dimen name="dp73">73dip</dimen>
+    <dimen name="dp74">74dip</dimen>
+    <dimen name="dp75">75dip</dimen>
+    <dimen name="dp76">76dip</dimen>
+    <dimen name="dp77">77dip</dimen>
+    <dimen name="dp78">78dip</dimen>
+    <dimen name="dp79">79dip</dimen>
+    <dimen name="dp80">80dip</dimen>
+    <dimen name="dp81">81dip</dimen>
+    <dimen name="dp82">82dip</dimen>
+    <dimen name="dp83">83dip</dimen>
+    <dimen name="dp84">84dip</dimen>
+    <dimen name="dp85">85dip</dimen>
+    <dimen name="dp86">86dip</dimen>
+    <dimen name="dp87">87dip</dimen>
+    <dimen name="dp88">88dip</dimen>
+    <dimen name="dp89">89dip</dimen>
+    <dimen name="dp90">90dip</dimen>
+    <dimen name="dp91">91dip</dimen>
+    <dimen name="dp92">92dip</dimen>
+    <dimen name="dp93">93dip</dimen>
+    <dimen name="dp94">94dip</dimen>
+    <dimen name="dp95">95dip</dimen>
+    <dimen name="dp96">96dip</dimen>
+    <dimen name="dp97">97dip</dimen>
+    <dimen name="dp98">98dip</dimen>
+    <dimen name="dp99">99dip</dimen>
+    <dimen name="dp100">100dip</dimen>
+    <dimen name="dp106">106dip</dimen>
+    <dimen name="dp115">115dip</dimen>
+    <dimen name="dp120">120dip</dimen>
+    <dimen name="dp121">121dip</dimen>
+    <dimen name="dp125">125dip</dimen>
+    <dimen name="dp130">130dip</dimen>
+    <dimen name="dp142">142dip</dimen>
+    <dimen name="dp144">144dip</dimen>
+    <dimen name="dp150">150dip</dimen>
+    <dimen name="dp156">156dip</dimen>
+    <dimen name="dp160">160dip</dimen>
+    <dimen name="dp166">166dip</dimen>
+    <dimen name="dp170">170dip</dimen>
+    <dimen name="dp180">180dip</dimen>
+    <dimen name="dp200">200dip</dimen>
+    <dimen name="dp220">220dip</dimen>
+    <dimen name="dp225">225dip</dimen>
+    <dimen name="dp230">230dip</dimen>
+    <dimen name="dp235">235dip</dimen>
+    <dimen name="dp266">266dip</dimen>
+    <dimen name="dp344">344dip</dimen>
+    <!-- 自定义字号-根据720分辨率计算的 -->
+    <!--  12px  -->
+    <dimen name="px12">6.0sp</dimen>
+    <!--  13px  -->
+    <dimen name="px13">6.5sp</dimen>
+    <!--  14px  -->
+    <dimen name="px14">7.0sp</dimen>
+    <!--  15px  -->
+    <dimen name="px15">7.5sp</dimen>
+    <!--  16px  -->
+    <dimen name="px16">8.0sp</dimen>
+    <!--  17px  -->
+    <dimen name="px17">8.5sp</dimen>
+    <!--  18px  -->
+    <dimen name="px18">9.0sp</dimen>
+    <!--  19px  -->
+    <dimen name="px19">9.5sp</dimen>
+    <!--  20px  -->
+    <dimen name="px20">10.0sp</dimen>
+    <!--  21px  -->
+    <dimen name="px21">10.5sp</dimen>
+    <!--  22px  -->
+    <dimen name="px22">11.0sp</dimen>
+    <!--  23px  -->
+    <dimen name="px23">11.5sp</dimen>
+    <!--  24px  -->
+    <dimen name="px24">12.0sp</dimen>
+    <!--  25px  -->
+    <dimen name="px25">12.5sp</dimen>
+    <!--  26px  -->
+    <dimen name="px26">13.0sp</dimen>
+    <!--  27px  -->
+    <dimen name="px27">13.5sp</dimen>
+    <!--  28px  -->
+    <dimen name="px28">14.0sp</dimen>
+    <!--  29px  -->
+    <dimen name="px29">14.5sp</dimen>
+    <!--  30px  -->
+    <dimen name="px30">15.0sp</dimen>
+    <!--  31px  -->
+    <dimen name="px31">15.5sp</dimen>
+    <!--  32px  -->
+    <dimen name="px32">16.0sp</dimen>
+    <!--  33px  -->
+    <dimen name="px33">16.5sp</dimen>
+    <!--  34px  -->
+    <dimen name="px34">17.0sp</dimen>
+    <!--  35px  -->
+    <dimen name="px35">17.5sp</dimen>
+    <!--  36px  -->
+    <dimen name="px36">18.0sp</dimen>
+    <!--  37px  -->
+    <dimen name="px37">18.5sp</dimen>
+    <!--  38px  -->
+    <dimen name="px38">19.0sp</dimen>
+    <!--  39px  -->
+    <dimen name="px39">19.5sp</dimen>
+    <!--  40px  -->
+    <dimen name="px40">20.0sp</dimen>
+    <!--  41px  -->
+    <dimen name="px41">20.5sp</dimen>
+    <!--  42px  -->
+    <dimen name="px42">21.0sp</dimen>
+    <!--  43px  -->
+    <dimen name="px43">21.5sp</dimen>
+    <!--  44px  -->
+    <dimen name="px44">22.0sp</dimen>
+    <!--  45px  -->
+    <dimen name="px45">22.5sp</dimen>
+    <!--  46px  -->
+    <dimen name="px46">23.0sp</dimen>
+    <!--  47px  -->
+    <dimen name="px47">23.5sp</dimen>
+    <!--  48px  -->
+    <dimen name="px48">24.0sp</dimen>
+    <!--  49px  -->
+    <dimen name="px49">24.5sp</dimen>
+    <!--  50px  -->
+    <dimen name="px50">25.0sp</dimen>
+    <dimen name="px60">30.0sp</dimen>
+
+
+    <dimen name="titleSize">18.0sp</dimen>
+
+
+</resources>
