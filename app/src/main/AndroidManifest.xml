@@ -132,13 +132,12 @@
         <activity
             android:name=".SchoolRecord.SchoolRecordActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/BaseTheme"/>
+            android:theme="@style/BaseTheme" />
         <activity
             android:name=".myorder.MyOrderActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/BaseTheme">
-
-        </activity>
+            android:theme="@style/BaseTheme"></activity>
+        <activity android:name=".myorder.OrderInformationActivity"></activity>
     </application>
 
 </manifest>

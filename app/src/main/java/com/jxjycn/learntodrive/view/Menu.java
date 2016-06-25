@@ -186,8 +186,6 @@ public class Menu implements View.OnClickListener{
                 intentLeftToRight(SchoolRecordActivity.class);
                 break;
             case R.id.menu_rl_recommend:
-
-
                 break;
             case R.id.menu_rl_help:
                 break;

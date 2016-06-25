@@ -3,6 +3,8 @@ package com.jxjycn.learntodrive.myorder;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.jxjycn.learntodrive.R;
@@ -29,18 +31,25 @@ public class MyOrderActivity extends BaseActivity {
         lsv.setAdapter(new LsvMyOrderAdapter(this, null));
 
 
+        initSwipeLayout();
+
+        lsv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                intentLeftToRight(OrderInformationActivity.class);
+            }
+        });
+
+
+
+
+    }
+
+    private void initSwipeLayout() {
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                showToast("刷新开始");
-
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        showToast("finish()");
-                        swipeContainer.setRefreshing(false);
-                    }
-                }, 3000);
+                onRefreshing();
             }
         });
 
@@ -50,10 +59,23 @@ public class MyOrderActivity extends BaseActivity {
                 android.R.color.holo_orange_light,
                 android.R.color.holo_green_light
         );
-
-
-
-
     }
+
+    /**
+     * 刷新业务
+     */
+    private void onRefreshing(){
+        showToast("刷新开始");
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showToast("finish()");
+                swipeContainer.setRefreshing(false);
+            }
+        }, 3000);
+    }
+
+
 
 }
