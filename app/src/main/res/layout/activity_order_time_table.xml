@@ -688,7 +688,7 @@
             android:layout_marginLeft="@dimen/dp13"
             android:layout_marginRight="@dimen/dp13"
             android:layout_marginTop="@dimen/dp5"
-            android:background="@drawable/mine_item_background"
+            android:background="@color/gray"
             android:text="确定"
 
             android:textColor="@color/mianTextColor" />

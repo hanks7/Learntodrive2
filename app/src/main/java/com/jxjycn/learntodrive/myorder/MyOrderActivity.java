@@ -27,19 +27,14 @@ public class MyOrderActivity extends BaseActivity {
         setContentView(R.layout.activity_my_order);
         ButterKnife.bind(this);
         setTitle("我的订单", 0, 0, null);
-
         lsv.setAdapter(new LsvMyOrderAdapter(this, null));
-
-
         initSwipeLayout();
-
         lsv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 intentLeftToRight(OrderInformationActivity.class);
             }
         });
-
 
 
 
@@ -66,7 +61,6 @@ public class MyOrderActivity extends BaseActivity {
      */
     private void onRefreshing(){
         showToast("刷新开始");
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

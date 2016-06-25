@@ -142,7 +142,7 @@ public class OrderTimeTableActivity extends BaseActivity {
     public void changeCommiteButton(int i){
         if(i!=0){
 
-            vbtncommite.setBackgroundColor(getResources().getColor(R.color.yellow));
+            vbtncommite.setBackgroundDrawable(getResources().getDrawable(R.drawable.nomal_button_selector));
             vbtncommite.setEnabled(true);
 
         }else{

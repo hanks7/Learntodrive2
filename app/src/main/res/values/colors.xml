@@ -238,6 +238,7 @@
     <color name="mianTextColor">#6c6c6c</color>
     <color name="yellow">#FFA135</color>
     <color name="booktimebackground">#F0F0F0</color>
+    <color name="clarity">#00000000</color>
 
 
 

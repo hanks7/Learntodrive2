@@ -1,14 +1,19 @@
 package com.jxjycn.learntodrive.home.Fragment;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -29,9 +34,12 @@ import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.jxjycn.learntodrive.Coach.OrderCoachActivity;
 import com.jxjycn.learntodrive.Coach.OrderTimeTableActivity;
+import com.jxjycn.learntodrive.Coach.biz.GetCurrentTime;
 import com.jxjycn.learntodrive.R;
+import com.jxjycn.learntodrive.home.adapter.LearnToDriveGradViewAdapter;
 import com.jxjycn.learntodrive.home.biz.GetStreetName;
 import com.jxjycn.learntodrive.util.UtilIntent;
+import com.jxjycn.learntodrive.view.BaseGridView;
 
 import java.util.ArrayList;
 
@@ -60,6 +68,10 @@ public class LearnToDriveFragment extends Fragment {
 
     private View view;
 
+    private ArrayList<TextView> tv_dayOf_week_list;
+    private ArrayList<RadioButton> tv_dayOf_moth_list;
+   
+
 
     // 定位相关
     LocationClient mLocClient;
@@ -73,6 +85,8 @@ public class LearnToDriveFragment extends Fragment {
     BaiduMap mBaiduMap;
     private InfoWindow mInfoWindow;
     boolean isFirstLoc = true; // 是否首次定位
+    private AlertDialog mDialog;
+    private ViewHolder viewHolder;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -123,7 +137,6 @@ public class LearnToDriveFragment extends Fragment {
 
     }
 
-
     public void initOverlay() {
 
         LatLng llA = new LatLng(31.818384974842248, 117.24032099999994);
@@ -162,7 +175,8 @@ public class LearnToDriveFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ltd_booktime:
-                UtilIntent.intentDIYLeftToRight(getActivity(), OrderTimeTableActivity.class);
+//                UtilIntent.intentDIYLeftToRight(getActivity(), OrderTimeTableActivity.class);
+                showMydialog();
 
                 break;
             case R.id.ltd_coach:
@@ -215,7 +229,6 @@ public class LearnToDriveFragment extends Fragment {
         public void onReceivePoi(BDLocation poiLocation) {
         }
     }
-
 
     /**
      * 地图状态改变
@@ -270,5 +283,125 @@ public class LearnToDriveFragment extends Fragment {
         MapView.setMapCustomEnable(false);
     }
 
+    private void showMydialog() {
+        View view = View.inflate(getActivity(), R.layout.dialog_home_order_time, null);
+
+        mDialog = new AlertDialog.Builder(getActivity()).create();
+        mDialog.setView(view, 0,0,0,0);
+        Window window = mDialog.getWindow();
+        mDialog.setView(view);
+        mDialog.show();
+        window.setGravity(Gravity.BOTTOM);
+
+         viewHolder=new ViewHolder(view);
+
+
+        ArrayList<String> list = getStrings();
+        LearnToDriveGradViewAdapter adapter = new LearnToDriveGradViewAdapter(this, list);
+        viewHolder.vGv.setAdapter(adapter);
+    
+        getDayWeekList(viewHolder);
+        GetCurrentTime getCurrentTime = new GetCurrentTime(tv_dayOf_week_list, tv_dayOf_moth_list);
+        getCurrentTime.commit();
+
+
+    }
+
+
+     class ViewHolder {
+        @Bind(R.id.gv)
+        BaseGridView vGv;
+        @Bind(R.id.tv_dayOf_week_0)
+        TextView tvDayOfWeek0;
+        @Bind(R.id.tv_dayOf_week_1)
+        TextView tvDayOfWeek1;
+        @Bind(R.id.tv_dayOf_week_2)
+        TextView tvDayOfWeek2;
+        @Bind(R.id.tv_dayOf_week_3)
+        TextView tvDayOfWeek3;
+        @Bind(R.id.tv_dayOf_week_4)
+        TextView tvDayOfWeek4;
+        @Bind(R.id.tv_dayOf_week_5)
+        TextView tvDayOfWeek5;
+        @Bind(R.id.tv_dayOf_week_6)
+        TextView tvDayOfWeek6;
+        @Bind(R.id.tv_dayOf_week_list_0)
+        RadioButton tvDayOfWeekList0;
+        @Bind(R.id.tv_dayOf_week_list_1)
+        RadioButton tvDayOfWeekList1;
+        @Bind(R.id.tv_dayOf_week_list_2)
+        RadioButton tvDayOfWeekList2;
+        @Bind(R.id.tv_dayOf_week_list_3)
+        RadioButton tvDayOfWeekList3;
+        @Bind(R.id.tv_dayOf_week_list_4)
+        RadioButton tvDayOfWeekList4;
+        @Bind(R.id.tv_dayOf_week_list_5)
+        RadioButton tvDayOfWeekList5;
+        @Bind(R.id.tv_dayOf_week_list_6)
+        RadioButton tvDayOfWeekList6;
+
+        @Bind(R.id.btn_commite)
+        Button vbtncommite;
+
+        ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
+    }
+
+
+    private void getDayWeekList(ViewHolder viewHolder) {
+        tv_dayOf_week_list = new ArrayList<>();
+        tv_dayOf_week_list.add(viewHolder.tvDayOfWeek0);
+        tv_dayOf_week_list.add(viewHolder.tvDayOfWeek1);
+        tv_dayOf_week_list.add(viewHolder.tvDayOfWeek2);
+        tv_dayOf_week_list.add(viewHolder.tvDayOfWeek3);
+        tv_dayOf_week_list.add(viewHolder.tvDayOfWeek4);
+        tv_dayOf_week_list.add(viewHolder.tvDayOfWeek5);
+        tv_dayOf_week_list.add(viewHolder.tvDayOfWeek6);
+
+        tv_dayOf_moth_list = new ArrayList<>();
+        tv_dayOf_moth_list.add(viewHolder.tvDayOfWeekList0);
+        tv_dayOf_moth_list.add(viewHolder.tvDayOfWeekList1);
+        tv_dayOf_moth_list.add(viewHolder.tvDayOfWeekList2);
+        tv_dayOf_moth_list.add(viewHolder.tvDayOfWeekList3);
+        tv_dayOf_moth_list.add(viewHolder.tvDayOfWeekList4);
+        tv_dayOf_moth_list.add(viewHolder.tvDayOfWeekList5);
+        tv_dayOf_moth_list.add(viewHolder.tvDayOfWeekList6);
+    }
+
+    @NonNull
+    private ArrayList<String> getStrings() {
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 5; i < 23; i++) {
+            String str = v(i);
+            list.add(str);
+        }
+        return list;
+    }
+
+
+    private String v(int t) {
+        String s = t + ":00" + "-" + (t + 1) + ":00";
+
+        return s;
+
+    }
+
+
+
+    /**
+     * 回调执行在adapter中执行
+     * @param i
+     */
+    public void changeCommiteButton(int i){
+        if(i!=0){
+            viewHolder.vbtncommite.setBackgroundDrawable(getResources().getDrawable(R.drawable.nomal_button_selector));
+            viewHolder.vbtncommite.setEnabled(true);
+        }else{
+            viewHolder.vbtncommite.setEnabled(false);
+            viewHolder.vbtncommite.setBackgroundColor(getResources().getColor(R.color.gray));
+        }
+        viewHolder.vbtncommite.setTextColor(getResources().getColor(R.color.white));
+    }
 
 }

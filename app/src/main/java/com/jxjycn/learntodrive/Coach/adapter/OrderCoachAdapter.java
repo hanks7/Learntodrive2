@@ -10,8 +10,10 @@ import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.jxjycn.learntodrive.Coach.OrderTimeTableActivity;
 import com.jxjycn.learntodrive.R;
 import com.jxjycn.learntodrive.base.BaseActivity;
+import com.jxjycn.learntodrive.util.UtilIntent;
 
 import java.util.List;
 
@@ -74,7 +76,7 @@ public class OrderCoachAdapter extends BaseAdapter implements View.OnClickListen
                 context.showToast("kfjaklsdjflas");
                     break;
             case R.id.item_ordercoach_rl_item:
-                context.showToast("kfjaklsdjflas");
+                UtilIntent.intentDIYLeftToRight(context,OrderTimeTableActivity.class);
                     break;
 
         }
