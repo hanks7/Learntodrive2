@@ -1,5 +1,6 @@
 package com.jxjycn.learntodrive.Coach;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -9,6 +10,8 @@ import com.jxjycn.learntodrive.Coach.adapter.LsvOrderTimeAdapter;
 import com.jxjycn.learntodrive.R;
 import com.jxjycn.learntodrive.base.BaseActivity;
 import com.jxjycn.learntodrive.view.ListViewForScrollView;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -29,18 +32,17 @@ public class ConfirmOrderActivity extends BaseActivity {
         setContentView(R.layout.activity_confirm_order);
         ButterKnife.bind(this);
         setTitle("学车预约确认", 0, 0, null);
+        Intent intent=getIntent();
+        Bundle bundle=intent.getExtras();
+        ArrayList<String> list= bundle.getStringArrayList("ArrayList");
+        String[] strs = new String[list.size()];
 
-
-        String[] strs = new String[]{
-                "2016-6-21 16:00-17.00", "2016-6-21 16:00-17.00", "2016-6-21 16:00-17.00", "2016-6-21 16:00-17.00", "2016-6-21 16:00-17.00"
-        };
-
+        for (int i=0;i<list.size();i++){
+            strs[i]=list.get(i);
+        }
 
         lsvOrderTime.setAdapter(new ArrayAdapter<String>(this, R.layout.item_confirm_order_time_lsv, strs));
         vlsvOrderClass.setAdapter(new LsvOrderTimeAdapter(this, null));
-
-
-
     }
 
 

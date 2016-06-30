@@ -413,247 +413,17 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/title"
+            <GridView
+                android:id="@+id/gv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="@dimen/dp5"
-                android:orientation="vertical">
+                android:layout_centerVertical="true"
+                android:background="@color/mainBackground"
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius">
-
-                        <TextView
-                            android:id="@+id/tv_dayOf_week_0"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:text="日1"
-                            android:textColor="@color/yellow" />
-
-
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius">
-
-                        <TextView
-                            android:id="@+id/tv_dayOf_week_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:text="日1"
-                            android:textColor="@color/yellow" />
-
-
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius">
-
-                        <TextView
-                            android:id="@+id/tv_dayOf_week_2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:text="日1"
-                            android:textColor="@color/yellow" />
-
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius">
-
-                        <TextView
-                            android:id="@+id/tv_dayOf_week_3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:text="日1"
-                            android:textColor="@color/yellow" />
-
-
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius">
-
-                        <TextView
-                            android:id="@+id/tv_dayOf_week_4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:text="日1"
-                            android:textColor="@color/yellow" />
-
-
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius">
-
-                        <TextView
-                            android:id="@+id/tv_dayOf_week_5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:text="日1"
-                            android:textColor="@color/yellow" />
-
-
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius">
-
-                        <TextView
-                            android:id="@+id/tv_dayOf_week_6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:text="日1"
-                            android:textColor="@color/yellow" />
-
-
-                    </RelativeLayout>
-
-
-                </LinearLayout>
-
-                <RadioGroup
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-
-
-                    >
-
-                    <RadioButton
-                        android:id="@+id/tv_dayOf_week_list_0"
-                        android:layout_width="fill_parent"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius_selected"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="6/18"
-                        android:textColor="@drawable/selected_booktime_cocah_text_color"
-                        android:textSize="@dimen/px22" />
-
-                    <RadioButton
-                        android:id="@+id/tv_dayOf_week_list_1"
-                        android:layout_width="fill_parent"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius_selected"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="6/18"
-                        android:textColor="@drawable/selected_booktime_cocah_text_color"
-                        android:textSize="@dimen/px22"
-
-                        />
-
-                    <RadioButton
-                        android:id="@+id/tv_dayOf_week_list_2"
-                        android:layout_width="fill_parent"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius_selected"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="6/18"
-                        android:textColor="@drawable/selected_booktime_cocah_text_color"
-                        android:textSize="@dimen/px22" />
-
-                    <RadioButton
-                        android:id="@+id/tv_dayOf_week_list_3"
-                        android:layout_width="fill_parent"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius_selected"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="6/18"
-                        android:textColor="@drawable/selected_booktime_cocah_text_color"
-                        android:textSize="@dimen/px22" />
-
-                    <RadioButton
-                        android:id="@+id/tv_dayOf_week_list_4"
-                        android:layout_width="fill_parent"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius_selected"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="6/18"
-                        android:textColor="@drawable/selected_booktime_cocah_text_color"
-                        android:textSize="@dimen/px22" />
-
-                    <RadioButton
-                        android:id="@+id/tv_dayOf_week_list_5"
-                        android:layout_width="fill_parent"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius_selected"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="6/18"
-                        android:textColor="@drawable/selected_booktime_cocah_text_color"
-                        android:textSize="@dimen/px22" />
-
-                    <RadioButton
-                        android:id="@+id/tv_dayOf_week_list_6"
-                        android:layout_width="fill_parent"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_no_radius_selected"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="6/18"
-                        android:textColor="@drawable/selected_booktime_cocah_text_color"
-                        android:textSize="@dimen/px22" />
-
-
-                </RadioGroup>
-            </LinearLayout>
-
+                android:horizontalSpacing="1dp"
+                android:numColumns="7"
+                android:verticalSpacing="1dp" />
 
             <com.jxjycn.learntodrive.view.BaseGridView
                 android:id="@+id/gv"
@@ -664,6 +434,7 @@
                 android:numColumns="4"
                 android:stretchMode="columnWidth"
                 android:verticalSpacing="1dp" />
+
 
 
         </LinearLayout>
@@ -690,8 +461,7 @@
             android:layout_marginTop="@dimen/dp5"
             android:background="@color/gray"
             android:text="确定"
-
-            android:textColor="@color/mianTextColor" />
+            android:textColor="@color/white" />
     </RelativeLayout>
 
 

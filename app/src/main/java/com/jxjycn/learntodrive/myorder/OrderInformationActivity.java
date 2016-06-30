@@ -159,6 +159,7 @@ public class OrderInformationActivity extends BaseActivity implements View.OnCli
                 showSubmitPopwindows(v);
                 break;
             case R.id.btn_2pay:
+                intentLeftToRight(PayActivity.class);
                 break;
             case R.id.popwindows_rl:
 

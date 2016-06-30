@@ -24,6 +24,8 @@
     <string name="album">相册</string>
     <string name="SchoolRecordActivity">学车记录</string>
     <string name="OrderInformationActivity">订单详情</string>
+    <string name="ChooseOrderYoutTime">选择您预约的时间</string>
+    <string name="MyWalletActivity">我的钱包</string>
 
 
 </resources>

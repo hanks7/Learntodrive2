@@ -21,6 +21,7 @@ import com.jxjycn.learntodrive.R;
 import com.jxjycn.learntodrive.base.BaseActivity;
 import com.jxjycn.learntodrive.common.AppData;
 import com.jxjycn.learntodrive.util.BitmapHelper;
+import com.jxjycn.learntodrive.util.Tools;
 import com.jxjycn.learntodrive.util.UtilBitmap;
 import com.jxjycn.learntodrive.util.UtilDate;
 import com.jxjycn.learntodrive.view.CircularImageView;
@@ -93,6 +94,7 @@ public class PersonalInfromationActivity extends BaseActivity implements ActionS
         setTitle(getResources().getString(R.string.PersonalInfromationActivityTitle), 0, 0, null);
         intTimePickerView();//选择时间
         intSexPickView();//选择性别
+        Tools.imageLoader(vIvHead,AppData.textUrl4);
 
 
     }
@@ -119,6 +121,8 @@ public class PersonalInfromationActivity extends BaseActivity implements ActionS
                 break;
             case R.id.pia_rl_idINformation:
                 vTvIdINformation.setText("请先去报名");
+                intentLeftToRight(WriteInfroActivity.class);
+
                 break;
             case R.id.pia_rl_introduce:
                 intentResultLeftToRight(IntroduceActivity.class, 103);

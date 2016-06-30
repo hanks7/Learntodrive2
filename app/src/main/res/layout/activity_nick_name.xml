@@ -29,7 +29,7 @@
             android:layout_marginLeft="@dimen/dp5"
             android:layout_marginRight="@dimen/dp5"
             android:background="@null"
-            android:hint="@string/reallyname"
+            android:hint="@string/nickname"
             android:maxLength="16"
             android:textColor="@color/mianTextColor"
             android:textCursorDrawable="@drawable/curson" />

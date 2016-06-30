@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -15,6 +16,7 @@ import android.media.ExifInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -31,12 +33,14 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -124,13 +128,14 @@ public class Tools {
         return bitmap;
     }
 
+    /**
+     * imageload 图片加载
+     * @param imageView
+     * @param url
+     */
     @SuppressWarnings("deprecation")
-    public static void imageLoader(Context context, String url, ImageView imageView) {
-
-
-        ImageLoader.getInstance().displayImage(url, imageView, BaseApplication.instance.defaultOptions);
-
-
+    public static void imageLoader( ImageView imageView,String url) {
+        ImageLoader.getInstance().displayImage(url, imageView, BaseApplication.application.defaultOptions);
     }
 
 
@@ -826,18 +831,61 @@ public class Tools {
     /**
      * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
      */
-    public static int dip2px(Context context, float dpValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
+    public static int dip2px(float dpValue) {
+        final float scale = BaseApplication.context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
     }
-
 
 
     /**
      * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
      */
-    public static int px2dip(Context context, float pxValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
+    public static int px2dip(float pxValue) {
+        final float scale = BaseApplication.context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
+
     }
+
+    public static int getScreenWidht(Activity activity) {
+        DisplayMetrics dm = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int width = dm.widthPixels;    //得到宽度
+        return width;
+    }
+
+
+    public static int getScreenHeight(Activity activity) {
+        DisplayMetrics dm = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int height = dm.heightPixels;    //得到宽度
+        return height;
+    }
+
+
+    /**
+     * 读取放置于Android 项目assets中的 Json配置文件
+     *
+     * @param context
+     * @param fileName
+     * @return
+     */
+    public static String getJson(Context context, String fileName) {
+
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            AssetManager assetManager = context.getAssets();
+            BufferedReader bf = new BufferedReader(new InputStreamReader(
+                    assetManager.open(fileName)));
+
+            String line;
+            while ((line = bf.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+        } catch (IOException e) {
+            UtilLog.i("getJson", e.toString());
+        }
+        return stringBuilder.toString();
+    }
+
+
 }

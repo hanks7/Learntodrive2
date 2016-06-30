@@ -26,6 +26,7 @@ public class GetCurrentTime {
 
     }
 
+
     public void commit() {
 
         List<Date> dList = dateToWeek(new Date());

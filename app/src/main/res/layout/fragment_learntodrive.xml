@@ -40,13 +40,14 @@
                 android:src="@mipmap/alarm_clock_yellow_icon" />
 
             <TextView
+                android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp13"
                 android:layout_toEndOf="@+id/iv_time"
                 android:layout_toRightOf="@+id/iv_time"
-                android:text="选择您预约的时间"
+                android:text="@string/ChooseOrderYoutTime"
                 android:textColor="@color/gray" />
 
             <ImageView
@@ -85,7 +86,7 @@
                 android:src="@mipmap/people_yellow_icon" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tv_coach"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"

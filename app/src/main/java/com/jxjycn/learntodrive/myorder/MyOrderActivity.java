@@ -41,12 +41,6 @@ public class MyOrderActivity extends BaseActivity {
     }
 
     private void initSwipeLayout() {
-        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                onRefreshing();
-            }
-        });
 
         swipeContainer.setColorSchemeResources(
                 android.R.color.holo_blue_light,
@@ -54,6 +48,14 @@ public class MyOrderActivity extends BaseActivity {
                 android.R.color.holo_orange_light,
                 android.R.color.holo_green_light
         );
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                onRefreshing();
+            }
+        });
+
+
     }
 
     /**

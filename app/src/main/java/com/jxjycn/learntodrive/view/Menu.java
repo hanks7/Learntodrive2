@@ -17,9 +17,10 @@ import com.jxjycn.learntodrive.SchoolRecord.SchoolRecordActivity;
 import com.jxjycn.learntodrive.common.AppData;
 import com.jxjycn.learntodrive.mine.PersonalInfromationActivity;
 import com.jxjycn.learntodrive.myorder.MyOrderActivity;
+import com.jxjycn.learntodrive.util.Tools;
 import com.jxjycn.learntodrive.util.UtilGlide;
 import com.jxjycn.learntodrive.util.UtilIntent;
-import com.jxjycn.learntodrive.welcome.WelcomeActivity;
+import com.jxjycn.learntodrive.wallet.MyWalletActivity;
 
 import java.util.ArrayList;
 
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 public class Menu implements View.OnClickListener{
 
 
-    ImageView menuIvHead;
+    CircularImageView menuIvHead;
     TextView menuTvCount;
     TextView menuTvPhoneNum;
     ImageView imageView;
@@ -60,7 +61,7 @@ public class Menu implements View.OnClickListener{
     
     private Activity context;
     SlidingMenu slidingMenu;
-    private RelativeLayout iv_head;
+    private RelativeLayout rl_head;
     private Intent intent;
 
     //有参构造
@@ -79,7 +80,7 @@ public class Menu implements View.OnClickListener{
 
         menuTvDengji  = (TextView) context.findViewById(R.id.menu_tv_dengji);
         menuTvState= (TextView) context.findViewById(R.id.menu_tv_state);
-
+        menuIvHead= (CircularImageView) context.findViewById(R.id.menu_iv_head);
         menuRlHead= (RelativeLayout) context.findViewById(R.id.menu_rl_head);
         menuRlMywallet   = (RelativeLayout) context.findViewById(R.id.menu_rl_mywallet);
         menuRlOrder  = (RelativeLayout) context.findViewById(R.id.menu_rl_order);
@@ -97,6 +98,7 @@ public class Menu implements View.OnClickListener{
         menuRlHelp.setOnClickListener(this);
         menuRlSetting.setOnClickListener(this);
 
+        Tools.imageLoader(menuIvHead, AppData.textUrl4);
 
         initConvenientBanner();
 
@@ -177,7 +179,7 @@ public class Menu implements View.OnClickListener{
 
                 break;
             case R.id.menu_rl_mywallet:
-                intentLeftToRight(WelcomeActivity.class);
+                intentLeftToRight(MyWalletActivity.class);
                 break;
             case R.id.menu_rl_order:
                           intentLeftToRight(MyOrderActivity.class);

@@ -7,6 +7,7 @@
     android:background="@color/mainBackground">
 
     <LinearLayout
+        android:id="@+id/ll_scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@mipmap/studyrecord"
@@ -86,7 +87,7 @@
                     android:layout_marginTop="50dp"
                     android:background="@mipmap/studyrecord_no_exam"
                     android:gravity="center"
-                    android:text="7"
+
                     android:textColor="@color/gray" />
 
                 <TextView

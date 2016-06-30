@@ -24,9 +24,9 @@ import in.srain.cube.views.ptr.PtrHandler;
 public class OrderCoachActivity extends BaseActivity {
 
     @Bind(R.id.order_coach_edt_input)
-    EditText orderCoachEdtInput;
+    EditText vEdtInput;
     @Bind(R.id.order_coach_iv_clear)
-    ImageView orderCoachIvClear;
+    ImageView vIvClear;
     @Bind(R.id.order_coach_lsv)
     ListView lsv;
     @Bind(R.id.order_coach_load_list_layout)
@@ -42,15 +42,16 @@ public class OrderCoachActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_coach);
         ButterKnife.bind(this);
-        setTitle(translateRstring(R.string.orderCoach), R.string.refresh, 0, null);
+        setTitle(translateRstring(R.string.orderCoach), R.string.refresh, 0, new Runnable() {
+            @Override
+            public void run() {
 
+            }
+        });
+        vEdtInput.clearFocus();; //让Grid不能获得focus
         initView();
         OrderCoachAdapter adapter = new OrderCoachAdapter(this, null);
         lsv.setAdapter(adapter);
-
-
-
-
 
     }
 

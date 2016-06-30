@@ -212,6 +212,7 @@
 
 
     <dimen name="titleSize">18.0sp</dimen>
+    <dimen name="textSize">15.0sp</dimen>
 
 
 </resources>

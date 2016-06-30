@@ -136,10 +136,23 @@
         <activity
             android:name=".myorder.MyOrderActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/BaseTheme"></activity>
-        <activity android:name=".myorder.OrderInformationActivity"
+            android:theme="@style/BaseTheme" />
+        <activity
+            android:name=".myorder.OrderInformationActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/BaseTheme"></activity>
+            android:theme="@style/BaseTheme" />
+        <activity
+            android:name=".myorder.PayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme" />
+        <activity
+            android:name=".mine.WriteInfroActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme" />
+        <activity android:name=".Coach.TestActivity"></activity>
+        <activity android:name=".wallet.MyWalletActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme" ></activity>
     </application>
 
 </manifest>

@@ -5,19 +5,25 @@
     android:background="@color/mainBackground">
 
 
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/pdf_mapv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" />
+
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/learntodrive_relativelayout_shape"
-        android:orientation="vertical"
         android:layout_margin="@dimen/dp12"
-       >
+        android:background="@drawable/learntodrive_relativelayout_shape"
+        android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/partner_booktime"
+            android:id="@+id/pdf_booktime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -31,17 +37,18 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp13"
-                android:src="@mipmap/alarm_clock_green_icon" />
+                android:src="@mipmap/alarm_clock_green_icon"  />
 
             <TextView
+                android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/gray"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp13"
                 android:layout_toEndOf="@+id/iv_time"
                 android:layout_toRightOf="@+id/iv_time"
-                android:text="选择您预约的时间" />
+                android:text="@string/ChooseOrderYoutTime"
+                android:textColor="@color/gray" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -62,7 +69,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/partner_coach"
+            android:id="@+id/pdf_coach"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -79,15 +86,15 @@
                 android:src="@mipmap/people_green_icon" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tv_coach"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp13"
-                android:textColor="@color/gray"
                 android:layout_toEndOf="@+id/imageView2"
                 android:layout_toRightOf="@+id/imageView2"
                 android:text="选择您预约的教练"
+                android:textColor="@color/gray"
 
                 />
 
@@ -128,7 +135,7 @@
             >
 
             <RadioButton
-                android:id="@+id/partner_btn_enter"
+                android:id="@+id/pdf_btn_enter"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp15"
@@ -142,7 +149,7 @@
                 android:textColor="@drawable/partner_fragment_text_color_selected" />
 
             <RadioButton
-                android:id="@+id/partner_btn_homework"
+                android:id="@+id/pdf_btn_homework"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp15"
@@ -157,6 +164,40 @@
 
         </RadioGroup>
     </LinearLayout>
+
+
+
+    <View
+        android:id="@+id/iv_center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/pdf_iv_center"
+        android:layout_width="15dp"
+        android:layout_height="28dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="1dp"
+        android:src="@mipmap/icon_gcoding"
+        android:layout_above="@+id/iv_center"
+
+        />
+
+    <Button
+        android:id="@+id/pdf_btn_center"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/pdf_iv_center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp"
+        android:textSize="@dimen/px22"
+        android:background="@drawable/shape_overlay"
+        android:text="_ _ _"
+        android:visibility="invisible"
+        android:textColor="@color/white" />
 
 
 </RelativeLayout>
