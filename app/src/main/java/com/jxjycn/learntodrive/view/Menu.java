@@ -11,21 +11,24 @@ import android.widget.TextView;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.holder.Holder;
+import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jxjycn.learntodrive.Coach.WebActivity;
 import com.jxjycn.learntodrive.R;
 import com.jxjycn.learntodrive.SchoolRecord.SchoolRecordActivity;
+import com.jxjycn.learntodrive.base.BaseApplication;
 import com.jxjycn.learntodrive.common.AppData;
 import com.jxjycn.learntodrive.mine.PersonalInfromationActivity;
 import com.jxjycn.learntodrive.myorder.MyOrderActivity;
+import com.jxjycn.learntodrive.setting.SettingActivity;
 import com.jxjycn.learntodrive.util.Tools;
-import com.jxjycn.learntodrive.util.UtilGlide;
 import com.jxjycn.learntodrive.util.UtilIntent;
 import com.jxjycn.learntodrive.wallet.MyWalletActivity;
 
 import java.util.ArrayList;
 
 
-public class Menu implements View.OnClickListener{
+public class Menu implements View.OnClickListener {
 
 
     CircularImageView menuIvHead;
@@ -56,36 +59,37 @@ public class Menu implements View.OnClickListener{
     TextView menuTvSetting;
     RelativeLayout menuRlSetting;
     ConvenientBanner convenientBanner;
-    
-    
-    
+
+
     private Activity context;
     SlidingMenu slidingMenu;
     private RelativeLayout rl_head;
     private Intent intent;
 
     //有参构造
-    public Menu(Activity activity)   {
+    public Menu(Activity activity) {
         this.context = activity;
         this.slidingMenu = new SlidingMenu(activity);
         sliding(activity);
 
-        init();
-
+        init();//初始化控件
+        initdata();//初始化数据
 
     }
 
     private void init() {
-         ;
+        ;
 
-        menuTvDengji  = (TextView) context.findViewById(R.id.menu_tv_dengji);
-        menuTvState= (TextView) context.findViewById(R.id.menu_tv_state);
-        menuIvHead= (CircularImageView) context.findViewById(R.id.menu_iv_head);
-        menuRlHead= (RelativeLayout) context.findViewById(R.id.menu_rl_head);
-        menuRlMywallet   = (RelativeLayout) context.findViewById(R.id.menu_rl_mywallet);
-        menuRlOrder  = (RelativeLayout) context.findViewById(R.id.menu_rl_order);
+        menuTvDengji = (TextView) context.findViewById(R.id.menu_tv_dengji);
+        menuTvPhoneNum = (TextView) context.findViewById(R.id.menu_tv_phone_num);
+        menuTvCount = (TextView) context.findViewById(R.id.menu_tv_count);
+        menuTvState = (TextView) context.findViewById(R.id.menu_tv_state);
+        menuIvHead = (CircularImageView) context.findViewById(R.id.menu_iv_head);
+        menuRlHead = (RelativeLayout) context.findViewById(R.id.menu_rl_head);
+        menuRlMywallet = (RelativeLayout) context.findViewById(R.id.menu_rl_mywallet);
+        menuRlOrder = (RelativeLayout) context.findViewById(R.id.menu_rl_order);
         menuRlRecord = (RelativeLayout) context.findViewById(R.id.menu_rl_record);
-        menuRlRecommend= (RelativeLayout) context.findViewById(R.id.menu_rl_recommend);
+        menuRlRecommend = (RelativeLayout) context.findViewById(R.id.menu_rl_recommend);
         menuRlHelp = (RelativeLayout) context.findViewById(R.id.menu_rl_help);
         menuRlSetting = (RelativeLayout) context.findViewById(R.id.menu_rl_setting);
         convenientBanner = (ConvenientBanner) context.findViewById(R.id.convenientBanner);
@@ -98,9 +102,18 @@ public class Menu implements View.OnClickListener{
         menuRlHelp.setOnClickListener(this);
         menuRlSetting.setOnClickListener(this);
 
-        Tools.imageLoader(menuIvHead, AppData.textUrl4);
 
         initConvenientBanner();
+
+    }
+
+    private void initdata() {
+
+        Tools.imageLoader(menuIvHead, AppData.textUrl4);
+        String strPhone = BaseApplication.application.personInformationEntity.getMobile() + "";
+        menuTvCount.setText(strPhone);
+        if (!strPhone.equals(""))
+            menuTvPhoneNum.setText(strPhone.replace(strPhone.substring(4, 8), "*****"));
 
     }
 
@@ -109,12 +122,11 @@ public class Menu implements View.OnClickListener{
         convenientBanner.setFocusableInTouchMode(true);
         convenientBanner.requestFocus();
 
-        ArrayList<Slider> sliders=new ArrayList<Slider>();
-        for (int i = 0; i < AppData.imageUrl.length ; i++) {
-            Slider slider=new Slider();
+        ArrayList<Slider> sliders = new ArrayList<Slider>();
+        for (int i = 0; i < AppData.imageUrl.length; i++) {
+            Slider slider = new Slider();
             slider.setCompanyImg(AppData.imageUrl[i]);
             sliders.add(slider);
-
         }
         convenientBanner.setPages(
                 new CBViewHolderCreator<LocalImageHolderView>() {
@@ -127,8 +139,13 @@ public class Menu implements View.OnClickListener{
                 .setPageIndicator(new int[]{R.mipmap.white_radio, R.mipmap.blue_radio})
                         //设置指示器的方向
                 .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT);
-
         convenientBanner.startTurning(3000);
+        convenientBanner.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                intentLeftToRight(WebActivity.class);
+            }
+        });
     }
 
     private void sliding(Activity activity) {
@@ -157,6 +174,7 @@ public class Menu implements View.OnClickListener{
 
         }
     }
+
     public void closeMenu() {
         slidingMenu.showContent();
     }
@@ -171,18 +189,16 @@ public class Menu implements View.OnClickListener{
         UtilIntent.intentDIYLeftToRight(context, classes);
     }
 
-
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.menu_rl_head:
                 intentLeftToRight(PersonalInfromationActivity.class);
-
                 break;
             case R.id.menu_rl_mywallet:
                 intentLeftToRight(MyWalletActivity.class);
                 break;
             case R.id.menu_rl_order:
-                          intentLeftToRight(MyOrderActivity.class);
+                intentLeftToRight(MyOrderActivity.class);
                 break;
             case R.id.menu_rl_record:
                 intentLeftToRight(SchoolRecordActivity.class);
@@ -192,6 +208,7 @@ public class Menu implements View.OnClickListener{
             case R.id.menu_rl_help:
                 break;
             case R.id.menu_rl_setting:
+                intentLeftToRight(SettingActivity.class);
                 break;
         }
 
@@ -210,7 +227,8 @@ class LocalImageHolderView implements Holder<Slider> {
 
     @Override
     public void UpdateUI(Context context, final int position, Slider data) {
-        UtilGlide.loadImg(context, data.getCompanyImg(), R.mipmap.default_image, imageView);
+//        UtilGlide.loadImg(context, data.getCompanyImg(), R.mipmap.default_image, imageView);
+        Tools.imageLoader(imageView, data.getCompanyImg());
     }
 
 

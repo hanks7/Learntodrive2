@@ -90,4 +90,5 @@ dependencies {
     //精仿iOS的PickerView控件，有时间选择和选项选择并支持一二三级联动效果
     compile 'com.bigkoo:pickerview:2.0.8'
     compile files('libs/universal-image-loader-1.9.4.jar')
+    compile files('libs/thindownloadmanager-1.0.0.jar')
 }

@@ -88,14 +88,14 @@ public class PersonalInfromationActivity extends BaseActivity implements ActionS
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_infromation);
         ButterKnife.bind(this);
         setTitle(getResources().getString(R.string.PersonalInfromationActivityTitle), 0, 0, null);
         intTimePickerView();//选择时间
         intSexPickView();//选择性别
-        Tools.imageLoader(vIvHead,AppData.textUrl4);
-
+        Tools.imageLoader(vIvHead, AppData.textUrl4);
 
     }
 
@@ -129,7 +129,6 @@ public class PersonalInfromationActivity extends BaseActivity implements ActionS
                 break;
         }
     }
-
 
 
     /**
@@ -179,19 +178,18 @@ public class PersonalInfromationActivity extends BaseActivity implements ActionS
             vIvHead.setImageBitmap(bitmap);
         } else if (requestCode == 101 && null != data) {
             String str = data.getStringExtra(translateRstring(R.string.nickname)).trim();
-            if(!str.equals("")) vTvNickname.setText(str);
+            if (!str.equals("")) vTvNickname.setText(str);
 
         } else if (requestCode == 102 && null != data) {
             String str = data.getStringExtra(translateRstring(R.string.reallyname)).trim();
-            if(!str.equals("")) vTvReallyname.setText(str);
+            if (!str.equals("")) vTvReallyname.setText(str);
 
         } else if (requestCode == 103 && null != data) {
             String str = data.getStringExtra(translateRstring(R.string.introduce)).trim();
-            if(!str.equals("")) vTvIntroduce.setText(str);
+            if (!str.equals("")) vTvIntroduce.setText(str);
 
         }
     }
-
 
     @Override
     public void onOtherButtonClick(ActionSheet actionSheet, int index) {
@@ -214,7 +212,6 @@ public class PersonalInfromationActivity extends BaseActivity implements ActionS
     public void onDismiss(ActionSheet actionSheet, boolean isCancle) {
 
     }
-
 
 
     public void showActionSheet() {
@@ -249,6 +246,10 @@ public class PersonalInfromationActivity extends BaseActivity implements ActionS
             uri = fileName;
             file_ = new File(fileName);
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            intent.putExtra("camerasensortype", 2); // 调用前置摄像头
+            intent.putExtra("autofocus", true); // 自动对焦
+            intent.putExtra("fullScreen", false); // 全屏
+            intent.putExtra("showActionIcons", false);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file_));
             startActivityForResult(intent, 0);
         } else {
@@ -287,18 +288,14 @@ public class PersonalInfromationActivity extends BaseActivity implements ActionS
         pvTime.setTime(new Date());
         pvTime.setCyclic(false);
         pvTime.setCancelable(true);
-
-
         //时间选择后回调
         pvTime.setOnTimeSelectListener(new TimePickerView.OnTimeSelectListener() {
 
             @Override
             public void onTimeSelect(Date date) {
-
                 vTvBoirthday.setText(UtilDate.getSimpleDateFormatTime(date));
             }
         });
-
     }
 
 

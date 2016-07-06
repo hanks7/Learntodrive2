@@ -196,7 +196,7 @@
         android:textSize="@dimen/px22"
         android:background="@drawable/shape_overlay"
         android:text="_ _ _"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:textColor="@color/white" />
 
 

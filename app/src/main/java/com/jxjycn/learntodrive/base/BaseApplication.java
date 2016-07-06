@@ -2,22 +2,22 @@ package com.jxjycn.learntodrive.base;
 
 import android.app.Application;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.Handler;
+import android.content.SharedPreferences;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.baidu.mapapi.SDKInitializer;
 import com.jxjycn.learntodrive.R;
+import com.jxjycn.learntodrive.common.AppData;
+import com.jxjycn.learntodrive.mine.bean.PersonInformationEntity;
+import com.jxjycn.learntodrive.util.UtilLog;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
-import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
-import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
@@ -61,6 +61,7 @@ public class BaseApplication extends Application {
     public DisplayImageOptions defaultOptions;
     public static int[][] tempSave = new int[7][18];//选择的时间列表保存是否点击状态,0:没有点击,1:点击;3:小于当前时间
     public ImageLoaderConfiguration config;
+    public PersonInformationEntity personInformationEntity;
 
 
     @Override
@@ -73,12 +74,12 @@ public class BaseApplication extends Application {
         context = getApplicationContext();
         initImageLoad();
         queue = Volley.newRequestQueue(this);
-//        initUM();
-        instance=this;
-        tempSave=setTempSave();
+        instance = this;
+        tempSave = setTempSave();
+        saveLogin();//保存登陆
     }
 
-    private int[][]  setTempSave() {
+    private int[][] setTempSave() {
         int[][] tempSave = new int[7][18];
         for (int i = 0; i < 7; i++) {
             for (int t = 0; t < 18; t++) {
@@ -91,22 +92,17 @@ public class BaseApplication extends Application {
 
     public static BaseApplication getInstance() {
         return application;
+    }
+
+    public void saveLogin() {
+        personInformationEntity=new PersonInformationEntity();
+        SharedPreferences preferences = getSharedPreferences("UserInfo", 0);
+        personInformationEntity.setIsLongin(preferences.getBoolean("isLongin",false));
+        personInformationEntity.setMobile(preferences.getString("Mobile", ""));
 
 
     }
 
-//    private void initUM() {
-//        PlatformConfig.setWeixin("wxb69878cd9241eb83", "2b2f94b8d765326aaa2f1f454db36c2e");
-//        //微信 appid appsecret
-//
-//
-//        PlatformConfig.setSinaWeibo("3463738408", "bc78526674f9117d68af948e8c312dc9");
-//
-//        //新浪微博 appkey appsecret
-//
-//        PlatformConfig.setQQZone("1105185993", "1B9OPvo62beJX14k");
-//        // QQ和Qzone appid appkey
-//    }
 
     public static RequestQueue getRequestQueueinstance() {
         if (queue == null) {
@@ -115,45 +111,52 @@ public class BaseApplication extends Application {
         return queue;
     }
 
-
-
-
     private void initImageLoad() {
 
+
+
+
+        File cacheDir = StorageUtils.getOwnCacheDirectory(context,
+                AppData.PATH_CHINATOU_CACHE);
+        // displayImage(...) call if no options will be passed to this method
         defaultOptions = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.mipmap.default_image) // resource or drawable
-                .showImageForEmptyUri(R.mipmap.default_image) // resource or drawable
-                .showImageOnFail(R.mipmap.default_image) // resource or drawable
-                .resetViewBeforeLoading(false)  // default
-                .delayBeforeLoading(1000)
-                .cacheInMemory(false) // default
-                .cacheOnDisc(false) // default
-                .imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2) // default
-                .bitmapConfig(Bitmap.Config.ARGB_8888) // default
-                .displayer(new SimpleBitmapDisplayer()) // default
-                .handler(new Handler()) // default
-                .build();
+                .cacheInMemory(true).cacheOnDisc(true)
+                .showImageForEmptyUri(R.mipmap.default_image)// 没有图片
+                .showImageOnLoading(R.mipmap.default_image)// 加载中
+                .showImageOnFail(R.mipmap.default_image).build();// 加载失败
 
 
-        File cacheDir = StorageUtils.getCacheDirectory(context);
-        config = new ImageLoaderConfiguration.Builder(context)
-                .memoryCacheExtraOptions(480, 800) // default = device screen dimensions
-                .discCacheExtraOptions(480, 800, null)
-                .threadPriority(Thread.NORM_PRIORITY - 2) // default
-                .tasksProcessingOrder(QueueProcessingType.FIFO) // default
+
+        config = new ImageLoaderConfiguration.Builder(
+                context)
+                .memoryCacheExtraOptions(480, 800)
+                        // max width, max height，即保存的每个缓存文件的最大长宽
+                .threadPoolSize(3)
+                        // 线程池内加载的数量
+                .threadPriority(Thread.NORM_PRIORITY - 2)
                 .denyCacheImageMultipleSizesInMemory()
-                .memoryCache(new LruMemoryCache(2 * 1024 * 1024))
+                .memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))
+                        // 你可以通过自己的内存缓存实现
                 .memoryCacheSize(2 * 1024 * 1024)
-                .memoryCacheSizePercentage(13) // default
-                .discCache(new UnlimitedDiskCache(cacheDir)) // default
                 .discCacheSize(50 * 1024 * 1024)
+                .discCacheFileNameGenerator(new Md5FileNameGenerator())
+                        // 将保存的时候的URI名称用MD5 加密
+                .tasksProcessingOrder(QueueProcessingType.LIFO)
                 .discCacheFileCount(100)
-                .discCacheFileNameGenerator(new HashCodeFileNameGenerator()) // default
-                .imageDownloader(new BaseImageDownloader(context)) // default
-                .defaultDisplayImageOptions(defaultOptions) // defaul
-                .build();
+                        // 缓存的文件数量
+                .discCache(new UnlimitedDiskCache(cacheDir))
+                        // 自定义缓存路径
+                .defaultDisplayImageOptions(defaultOptions)
+                .imageDownloader(
+                        new BaseImageDownloader(context, 5 * 1000, 30 * 1000)) // connectTimeout
+                        // s)超时时间
+                .writeDebugLogs() // Remove for release app
+                .build();// 开始构建
+        // Initialize ImageLoader with configuration.
 
         ImageLoader.getInstance().init(config);
+
+ UtilLog.i("cacheDir.getPath()", cacheDir.getPath());
 
     }
 

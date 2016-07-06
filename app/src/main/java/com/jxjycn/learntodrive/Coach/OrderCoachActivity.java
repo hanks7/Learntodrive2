@@ -48,7 +48,7 @@ public class OrderCoachActivity extends BaseActivity {
 
             }
         });
-        vEdtInput.clearFocus();; //让Grid不能获得focus
+
         initView();
         OrderCoachAdapter adapter = new OrderCoachAdapter(this, null);
         lsv.setAdapter(adapter);

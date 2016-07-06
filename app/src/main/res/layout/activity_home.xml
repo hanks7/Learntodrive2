@@ -20,7 +20,7 @@
             android:id="@+id/home_rl_head"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.3"
             android:background="@drawable/mine_item_background">
 
             <ImageView
@@ -51,7 +51,7 @@
             android:id="@+id/home_rl_message_note"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.3"
             android:background="@drawable/mine_item_background">
 
             <ImageView

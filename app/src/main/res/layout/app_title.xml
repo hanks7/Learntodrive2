@@ -20,7 +20,6 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp13"
-
             android:src="@mipmap/ic_back" />
     </RelativeLayout>
 

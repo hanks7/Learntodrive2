@@ -1,6 +1,5 @@
 package com.jxjycn.learntodrive.home;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,12 +11,14 @@ import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.jxjycn.learntodrive.Coach.StudentCommentActivity;
 import com.jxjycn.learntodrive.R;
 import com.jxjycn.learntodrive.base.BaseActivity;
+import com.jxjycn.learntodrive.base.BaseApplication;
 import com.jxjycn.learntodrive.home.Fragment.EnterFrament;
+import com.jxjycn.learntodrive.home.Fragment.HomeWorkFragment;
 import com.jxjycn.learntodrive.home.Fragment.LearnToDriveFragment;
 import com.jxjycn.learntodrive.home.Fragment.PartnertrainFragment;
+import com.jxjycn.learntodrive.setting.update.UpdateManager;
 import com.jxjycn.learntodrive.view.Menu;
 import com.jxjycn.learntodrive.view.NoScrollViewPager;
 
@@ -47,32 +48,46 @@ public class HomeActivity extends BaseActivity {
     long exitTime = 0;//点击两次返回得到的时间
 
     private List<Fragment> fragmentList = new ArrayList<Fragment>();
+    public static HomeActivity homeActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         isHome = true;
-        isWelcome = false;
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        init();
+        addFragment();
+        checkUpdate();//检查软件更新
+    }
+
+    private void init() {
+        BaseApplication.application.saveLogin();
         ButterKnife.bind(this);
         menu = new Menu(this);
+        homeActivity=this;
+    }
 
+    /**
+     *  检查软件更新
+     */
+    private void checkUpdate() {
 
-        addFragment();
+        UpdateManager manager = new UpdateManager(this);
+        manager.checkUpdate();// 检查软件更新
     }
 
     private void addFragment() {
         fragmentList.add(new EnterFrament());
-        fragmentList.add(new EnterFrament());
+        fragmentList.add(new HomeWorkFragment());
         fragmentList.add(new LearnToDriveFragment());
         fragmentList.add(new PartnertrainFragment());
 
         FragmentManager fm = getSupportFragmentManager();
         MyPagerAdapter adapter = new MyPagerAdapter(fm);
 
-        vpMain.setOffscreenPageLimit(2);// 防止ViewPager中的Fragment被销毁
+        vpMain.setOffscreenPageLimit(4);// 防止ViewPager中的Fragment被销毁
         vpMain.setAdapter(adapter);
         vpMain.setCurrentItem(2);
         vpMain.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -156,7 +171,7 @@ public class HomeActivity extends BaseActivity {
 
                 break;
             case R.id.home_rl_message_note:
-                intentLeftToRight(StudentCommentActivity.class);
+                intentLeftToRight(NoticeActivity.class);
                 break;
         }
 
@@ -193,15 +208,13 @@ public class HomeActivity extends BaseActivity {
 
     public void exit() {
         if ((System.currentTimeMillis() - exitTime) > 2000) {
-            Toast.makeText(getApplicationContext(), "再按一次退出程序",
+            Toast.makeText(getApplicationContext(), "再按一次退出"+getResources().getString(R.string.app_name),
                     Toast.LENGTH_SHORT).show();
             exitTime = System.currentTimeMillis();
         } else {
             finish();
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
-            startActivity(intent);
+            System.exit(0);
+
         }
     }
 

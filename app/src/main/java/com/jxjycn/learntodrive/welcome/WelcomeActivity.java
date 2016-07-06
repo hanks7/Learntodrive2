@@ -6,7 +6,7 @@ import android.widget.ImageView;
 
 import com.jxjycn.learntodrive.R;
 import com.jxjycn.learntodrive.base.BaseActivity;
-import com.jxjycn.learntodrive.home.HomeActivity;
+import com.jxjycn.learntodrive.login.JudgeActivity;
 import com.jxjycn.learntodrive.util.UtilSPutil;
 import com.jxjycn.learntodrive.util.UtilSystem;
 
@@ -20,10 +20,11 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         isHome = true;
-        isWelcome=true;
+        isWelcome = true;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         ButterKnife.bind(this);
+
 //        intentLeftToRight(GuidActivity.class);
 //        延迟两秒跳转
         intentActivity();
@@ -39,11 +40,13 @@ public class WelcomeActivity extends BaseActivity {
     }
 
     private void selecterIntent() {
-        if(UtilSPutil.getInstance().getInt("code")== UtilSystem.getVersionCode()){
+        if (UtilSPutil.getInstance().getInt("code") == UtilSystem.getVersionCode()) {
 
-            intentLeftToRight(HomeActivity.class);finish();
-        }else{
-            intentLeftToRight(GuidActivity.class);finish();
+            intentLeftToRight(JudgeActivity.class);
+            finish();
+        } else {
+            intentLeftToRight(GuidActivity.class);
+            finish();
         }
     }
 }

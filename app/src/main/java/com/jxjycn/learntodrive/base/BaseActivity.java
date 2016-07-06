@@ -3,6 +3,7 @@ package com.jxjycn.learntodrive.base;
 import android.app.Activity;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -16,11 +17,12 @@ import android.widget.TextView;
 import com.jxjycn.learntodrive.R;
 import com.jxjycn.learntodrive.util.ConnectionChangeReceiver;
 import com.jxjycn.learntodrive.util.UtilIntent;
-import com.jxjycn.learntodrive.util.UtilNetStatus;
+import com.jxjycn.learntodrive.util.UtilLog;
 import com.jxjycn.learntodrive.util.UtilPixelTransfrom;
 import com.jxjycn.learntodrive.util.UtilToast;
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrConfig;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.umeng.analytics.MobclickAgent;
 
 /**
@@ -52,18 +54,18 @@ public class BaseActivity extends FragmentActivity {
             Slidr.attach(this, config);
 
         }
-        if (!isWelcome) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//
-//                setTranslucentStatus(this, true);
-//                SystemBarTintManager tintManager = new SystemBarTintManager(this);
-//                // enable status bar tint
-//                tintManager.setStatusBarTintEnabled(true);
-//                // enable navigation bar tint
-//                tintManager.setNavigationBarTintEnabled(true);
-//                tintManager.setStatusBarTintResource(R.color.c14acf0);
-//
-//            }
+        if (isWelcome) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+
+                setTranslucentStatus(this, true);
+                SystemBarTintManager tintManager = new SystemBarTintManager(this);
+                // enable status bar tint
+                tintManager.setStatusBarTintEnabled(true);
+                // enable navigation bar tint
+                tintManager.setNavigationBarTintEnabled(true);
+                tintManager.setStatusBarTintResource(R.color.mainBackground);
+
+            }
 
 
         }
@@ -85,7 +87,9 @@ public class BaseActivity extends FragmentActivity {
 
 
 
-    private static void setTranslucentStatus(Activity activity, boolean on) {
+    private  void setTranslucentStatus(Activity activity, boolean on) {
+
+
 
         Window win = activity.getWindow();
 
@@ -156,6 +160,14 @@ public class BaseActivity extends FragmentActivity {
      */
     public void showToast(String text) {
         UtilToast.showToast(text);
+    }
+    /**
+     * 描述：Toast提示文本.
+     *
+     * @param text 文本
+     */
+    public void showlog(Object text) {
+        UtilLog.e(text);
     }
 
     /**

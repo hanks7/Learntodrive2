@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 import com.jxjycn.learntodrive.R;
 import com.jxjycn.learntodrive.base.BaseActivity;
-import com.jxjycn.learntodrive.home.HomeActivity;
+import com.jxjycn.learntodrive.login.JudgeActivity;
 import com.jxjycn.learntodrive.util.UtilSPutil;
 import com.jxjycn.learntodrive.util.UtilSystem;
 
@@ -41,13 +41,6 @@ public class GuidActivity extends BaseActivity {
         circleIndicator.setViewPager(viewPager);
         UtilSPutil.getInstance().setInt("code", UtilSystem.getVersionCode());
 
-
-
-
-
-
-
-
     }
 
 
@@ -68,7 +61,7 @@ public class GuidActivity extends BaseActivity {
                     imageview.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            intentLeftToRight(HomeActivity.class);
+                            intentLeftToRight(JudgeActivity.class);
                             finish();
                         }
                     });

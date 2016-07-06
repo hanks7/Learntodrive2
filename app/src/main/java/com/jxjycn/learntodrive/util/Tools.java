@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -28,7 +29,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.jxjycn.learntodrive.base.BaseApplication;
+import com.jxjycn.learntodrive.setting.biz.DataCleanManager;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.utils.StorageUtils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -59,6 +62,27 @@ import java.util.regex.Pattern;
  * @author sks
  */
 public class Tools {
+
+    /**
+     * 查看文件夹大小
+     */
+    public static String queryDataSize(String path ,Context context) {
+
+        File cacheDir = StorageUtils.getOwnCacheDirectory(context, path);
+        String format = "";
+        try {
+
+            long cacheSize = DataCleanManager.getFolderSize(cacheDir);
+            format = DataCleanManager.getFormatSize(cacheSize);
+            UtilLog.i("查看缓存大小format", format);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return format;
+
+    }
+
+
     //	Intent intent=new Intent(this,MainActivity.class);startActivity(intent);finish();
 
     /**
@@ -92,10 +116,15 @@ public class Tools {
      * @return 当前版本号
      * @throws NameNotFoundException
      */
-    public static String getCurrentVersion(Context context) throws NameNotFoundException {
+    public static String getCurrentVersion(Context context) {
         PackageManager manager = context.getPackageManager();
         String packageName = context.getPackageName();
-        PackageInfo packageInfo = manager.getPackageInfo(packageName, 0);
+        PackageInfo packageInfo = null;
+        try {
+            packageInfo = manager.getPackageInfo(packageName, 0);
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
         return packageInfo.versionName;
     }
 
@@ -130,11 +159,12 @@ public class Tools {
 
     /**
      * imageload 图片加载
+     *
      * @param imageView
      * @param url
      */
     @SuppressWarnings("deprecation")
-    public static void imageLoader( ImageView imageView,String url) {
+    public static void imageLoader(ImageView imageView, String url) {
         ImageLoader.getInstance().displayImage(url, imageView, BaseApplication.application.defaultOptions);
     }
 
@@ -588,6 +618,15 @@ public class Tools {
 
     }
 
+    /**
+     * 算出JSON字符的数组对象长度
+     */
+    public static boolean getEdtEmpty(EditText editText) {
+
+        return editText.getText().toString().trim().length() == 0;
+
+    }
+
 
     /**
      * 时间得到时间戳
@@ -885,6 +924,27 @@ public class Tools {
             UtilLog.i("getJson", e.toString());
         }
         return stringBuilder.toString();
+    }
+
+    public static boolean judgeViewVisible(View view) {
+        if (view.getVisibility() == View.VISIBLE) {
+            view.setVisibility(View.GONE);
+            return false;
+        } else {
+            view.setVisibility(View.VISIBLE);
+            return true;
+        }
+    }
+
+    /**
+     * 
+     * @param context
+     */
+    public static void gobacktoHome(Context context) {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+        context.startActivity(intent);
     }
 
 

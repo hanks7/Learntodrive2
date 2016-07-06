@@ -19,7 +19,7 @@ public class UtilLog {
 
 			return;
 		}
-		Log.i("----"+tag+"----","---查看---"+response);
+		Log.i("--**"+tag+"**--","--**查看**--"+response);
 	}
 
 
@@ -29,7 +29,7 @@ public class UtilLog {
 
 			return;
 		}
-		Log.e("---查看---", response + "  >>>");
+		Log.e("--**查看**--", response + "  >>>");
 	}
 
 }

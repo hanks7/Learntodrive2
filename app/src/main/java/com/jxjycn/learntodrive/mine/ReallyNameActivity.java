@@ -19,6 +19,7 @@ public class ReallyNameActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nick_name);
         ButterKnife.bind(this);
+        vEdtInput.setHint(translateRstring(R.string.reallyname));
         setTitleonActivityResult(translateRstring(R.string.reallyname), new Runnable() {
             @Override
             public void run() {

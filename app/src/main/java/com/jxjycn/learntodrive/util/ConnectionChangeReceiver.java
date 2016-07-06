@@ -18,7 +18,7 @@ public class ConnectionChangeReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-//        judgeNetWorkConnect();
+        judgeNetWorkConnect();
     }
 
     /**

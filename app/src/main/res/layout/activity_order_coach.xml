@@ -16,6 +16,8 @@
         android:layout_height="@dimen/dp40"
         android:layout_gravity="center_horizontal"
         android:layout_margin="@dimen/dp7"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:background="@drawable/editext_background_shape">
 
 
