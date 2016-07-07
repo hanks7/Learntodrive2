@@ -175,8 +175,12 @@
         <activity
             android:name=".home.MapSearchActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/BaseTheme"></activity>
-        <activity android:name=".exam.PracticeExaminationActivity"></activity>
+            android:theme="@style/BaseTheme" />
+        <activity
+            android:name=".exam.PracticeExaminationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme" />
+        <activity android:name=".exam.ExamActivity"></activity>
     </application>
 
 </manifest>
